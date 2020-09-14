@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // (1)js数据类型有哪些，如何分类
+            基本类型:undefined Boolean  null Number  String  Symbol
+            引用类型:Object Array function
+        // (2)值类型和引用类型的区别
+            区别1:存储的位置不一样 
+                 值类型：存放在栈中，值类型的变量会保存在栈内存中，
+                        如果在一个函数中声明一个值类型的变量，那么这个变量当函数执行结束之后会自动销毁
+                 引用类型：存放在堆中，引用类型的变量名会保存在栈内存中，但是变量值会存储在堆内存中，
+                        引用类型的变量不会自动销毁，当没有引用变量引用它时，系统的垃圾回收机制会回收它
+            区别2: 复制方式不一样
+                值类型：的变量直接赋值就是深复制，如 var a = 10; var b = a
+                那么a的值就复制给b了，b修改值不会影响a
+                引用类型：的变量直接赋值实际上是传递引用，只是浅复制 如果改变了就相互影响
+            区别3:比较
+                值类型：值类型的比较是值的比较，只有当它们的值相等的时候它们才相等。
+                引用类型：比较是引用地址的比较，两个空对象在堆内存中的地址不一样，
+                        所以即使两个一模一样的对象也不一定相等
+        //（3）深拷贝和浅拷贝的区别
+
+
+
+        //中使用`typeof`能得到的哪些类型
+        console.log(typeof('abc')) //string
+        console.log(typeof(123)) //number
+        console.log(typeof(undefined)) //undefined
+        console.log(typeof(true|false)) //boolean
+        console.log(typeof({})) //object
+        console.log(typeof([])) //object
+        console.log(typeof(null)) //object
+        console.log(typeof(console.log)) //function
+
+        
+    </script>
+</body>
+</html>
