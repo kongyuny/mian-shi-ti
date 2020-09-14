@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var json={
+				'name':'liming',
+				'age':'20',
+				'height':'160cm',
+				'friends':{
+					'name':'jack',
+					'age':'21',
+					'height':'180cm'
+				},
+            }
+            function deepClone2(json) {
+                var newObj=JSON.parse(JSON.stringify(json));
+                newObj={
+                        name:'xiaohong',
+                        age:'30',
+                        friends:{
+                            name:'lisi',
+                            age:'20'
+                        }
+                    }
+                return newObj;
+            }
+            console.log(deepClone2(json))
+			// function  copy(json){//采用递归的方法
+		    //     var newJson = {};
+		    //     for(var i in  json){
+		    //         if(typeof json[i] == "object"){
+		    //             newJson[i] = copy(json[i]);//若是里边有对象，再次调用copy方法
+		    //         }else {
+		    //             newJson[i] = json[i];
+		    //         }
+            //     }
+            //     console.log(newJson.age)
+            //     console.log(newJson.friends)
+		    //      return newJson;
+            // }
+            // copy(json);
+            // console.log(json)
+            
+    </script>
+</body>
+</html>
