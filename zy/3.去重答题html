@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="show">点击</button>
+  <div id="input"></div>
+  <!-- <input type="text" id="input"> -->
+  <script>
+    let show = document.getElementById('show');
+    let input = document.getElementById('input');
+    // 1、例举3种强制类型转换和2种隐式类型转换?
+    // 强制转换：isNaN Number toSrting   parslnt parseFloat
+    // 隐式转换；if()  !   + - * %
+
+    // 2、split() join()的区别
+    // split()  把字符串转换成数组，把字符串里面的特殊符号作为分割点，分割成数组  
+    // join()  把数组转换成字符串，传一个特殊符号作为间隔 
+
+    // 3、事件绑定和普通事件有什么区别
+    // 普通事件， 不能多次绑定多个事件， 因为最下面的会覆盖掉上面的；
+    // 事件绑定， 可以绑定多个事件； 依次触发
+
+    // 4、添加删除替换插入到某个接点的方法
+    // splice   数组用  
+    // replace  字符串用
+
+    // 5、什么是javascript的同源策略
+    //  协议，域名，端口相同；同源策略是一种安全协议；
+
+    // 6、编写一个数组去重的方法
+
+    let arr = [1, 3, 3, 12, 15, 15, 22, 22, 32];
+    let box = [];
+    for (var i = 0; i < arr.length; i++) {
+      if (box.indexOf(arr[i]) === -1) {
+        box.push(arr[i])
+      }
+    }
+    console.log(box)
+    // 7、foo = foo||bar，这行代码是什么意思?为什么要这样写?
+
+    // 如果foo存在， 值不变， 如果不存在就把bar赋值给foo；  ||前面为true就取前面，否则取后面的
+    // 短路表达式， 使用 && 和 || 操作数表达式， 只要最后结果求出真或假； 求值过程就终止
+
+    // 8、用js实现随机选取10- -100之间的10个数字，存入一个数组，并排序。
+    //1. 一次性出来10个数
+    // let box = [];
+
+    // function fn() {
+    //   box = [];
+    //   for (var i = 0; box.length < 10; i++) {
+    //     let arr = Math.random();
+    //     arr = arr * 99;
+    //     arr = Math.floor(arr)
+    //     console.log(arr)
+    //     // 大于10的装进box数组
+    //     if (arr > 10) {
+    //       box.push(arr);
+    //       //  想直接去重
+    //       // if (box.length === 0) {
+    //       //   box.push(arr);
+    //       // } else {
+    //       //   for (var i = 0; i < box.length; i++) {
+    //       //     if (!(arr = box[i])) {
+    //       //       box.push(arr);
+    //       //     }
+    //       //   }
+    //       // }
+    //     }
+    //   }
+    //   // 排序
+    //   box.sort(function (a, b) {
+    //     return a - b
+    //   })
+    //   input.innerHTML = box
+    //   console.log(box)
+    // }
+    // show.onclick = fn;
+
+
+    // 2.点一次增加一个数
+    // let box = [];
+    // function fn() {
+    //   for (var i = 0; i < 1; i++) {
+    //     let arr = Math.random();
+    //     arr = arr * 99;
+    //     arr = Math.floor(arr)
+    //     console.log(arr)
+    //     // 大于10的装进box数组
+    //     if (arr > 10) {
+    //       box.push(arr);
+    //     } else {
+    //       fn()
+    //     }
+    //   }
+    //   // 排序
+    //   box.sort(function (a, b) {
+    //     return a - b
+    //   })
+    //   input.innerHTML = box
+    //   console.log(box)
+    // }
+    // //  监测不到box.length 变化
+    // show.onclick = box.length < 10 ? fn : null;
+
+    // console.log(box.length)
+
+
+    // 9、把两个数组合并，并删除第二个元素。|
+    // let ary = [1, 2, 3, 4, 5];
+    // let box = [6, 7, 8, 9, 10];
+    // let arr = ary.concat(box)
+    // arr.splice(1, 1)
+    // console.log(arr)
+  </script>
+</body>
+
+</html>
