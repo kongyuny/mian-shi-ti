@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //https://blog.csdn.net/m1009113872/article/details/108513901
+        
+        // //filter
+        // var arr = [1,2,5,8,2,4,5,8];
+        // var a = arr.filter(function(item,index,arr){
+        //     return arr.indexOf(item)===index 
+        // })
+        // console.log(a) //[1, 2, 5, 8, 4]
+
+        // //splice
+        // var arr = [1,2,5,8,2,4,5,8];
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = i+1; j < arr.length; j++) { //第一个数与比后面的数做比较
+        //         if(arr[i]===arr[j]){
+        //             arr.splice(j,1) //删除与第一个数比相等的数
+        //             i--;  //删除了需要重新比较
+        //         }
+                
+        //     }
+            
+        // }
+        // console.log(arr)
+
+        //indexOf
+        var arr = [1,2,5,8,2,4,5,8];
+        var temp = [];
+        for (let i = 0; i < arr.length; i++) {
+            if(temp.indexOf(arr[i])===-1){  // temp.indexOf(arr[i]) 通过数组的下标查找没有查找的值，始终为-1
+                temp.push(arr[i]) //temp 数组没有相同的值，就加入数组中，反之
+            }
+        }
+        temp.sort((a, b) => a - b);
+        console.log(temp)
+        
+
+
+    </script>
+</body>
+</html>

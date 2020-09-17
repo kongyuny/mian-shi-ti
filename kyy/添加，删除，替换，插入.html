@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="div1"></div>
+<body>
+   <script>
+      /* //获取元素
+       var div1=document.getElementById("div1");
+       //创建元素，给元素添加文字
+       var p = document.createElement('p');
+       p.innerHTML = '添加1';
+       var p1 = document.createElement('p');
+       p1.innerHTML = '添加2';
+       var p2 = document.createElement('p');
+       p2.innerHTML = '添加3';
+       div1.appendChild(p);
+       div1.appendChild(p1);
+       div1.appendChild(p2) 
+
+    // 获取元素
+    var div=document.getElementById("div1");
+    // 创造元素，给元素添加些文字
+    var p=document.createElement("p");
+    p.innerHTML="添加1";
+    var p1=document.createElement("p");
+    p1.innerHTML="添加2";
+    var p2=document.createElement("p");
+    p2.innerHTML="添加3";
+     // 添加到div中
+    div.appendChild(p);
+    // 插入节点
+    div.insertBefore(p1,p);
+    div.insertBefore(p2,p1);*/
+
+
+    var div=document.getElementById("div1");
+    // 创建元素，给元素添加些文字
+    var p=document.createElement("p");
+    p.innerHTML="添加1";
+    var p1=document.createElement("p");
+    p1.innerHTML="添加2";
+    var p2=document.createElement("p");
+    p2.innerHTML="添加3";
+    // 添加到div中
+    div.appendChild(p);
+    div.insertBefore(p1,p);
+    div.insertBefore(p2,p1);
+    // 新创建一个元素
+    var span=document.createElement("span");
+    span.innerHTML="span内容";
+    // 替换第一个p
+    div.replaceChild(span,p);
+    // 将p2替换为p
+    div.replaceChild(p,p2);
+
+    // 删除p1
+    div.removeChild(p);
+   </script> 
+</body>
+</html>

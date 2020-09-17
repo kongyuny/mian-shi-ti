@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['a','b','c'];
+        var arr2 = ['d','e','f'];
+        var a = arr.concat(arr2);
+        var b = a.splice(2,1);
+        console.log(a) //["a", "b", "d", "e", "f"]
+        console.log(b) //c
+    </script>
+</body>
+</html>

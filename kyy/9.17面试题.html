@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.举例3种强制类型转换和2种隐式类型转换？
+            parseInt()
+            parseFloat()
+            Number();
+            (==  ===)
+
+        //2.split()join()的区别？
+            split 切割成数组形式
+            join 转成将数组转成字符串
+
+        //3.事件绑定和普通事件的区别？
+            普通添加事件的方法不支持添加多个事件，
+            最下面的事件覆盖了最上面的事件，
+            而事件绑定addeventListener方法可以添加多个事件
+
+        //4.添加 删除 替换 插入到某个节点的方法？
+            appendChild(); //添加节点
+            removeChild(); //删除节点
+            insertBefore();//插入节点
+            replaceChild();//替换节点
+
+        //5.什么是同源策略
+        （域名 协议 端口 ）相同，有一个不相同的就是跨域
+         协议:http,https,ftp 
+         端口:80
+         域名：jiaoxueseo .com 
+
+        //6.编写一个数组去重的方法？
+            //indexOf
+            var arr = [1,2,5,8,2,4,5,8];
+            var temp = [];
+            for (let i = 0; i < arr.length; i++) {
+                if(temp.indexOf(arr[i])===-1){  // temp.indexOf(arr[i]) 通过数组的下标查找没有查找的值，始终为-1
+                    temp.push(arr[i]) //temp 数组没有相同的值，就加入数组中，反之
+                }
+            }
+            temp.sort((a, b) => a - b);
+            console.log(temp)
+        
+        //7.foo=foo||bar ,这行代码是什么意思？
+            || 表示或
+            foo和bar如果有一个为真，那么foo的值就为真，并把它赋给foo
+
+        //8.用js实现随机选取10-100之间的10个数，存入一个数组里，并排序？
+            var arr =[];
+            function fn1(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+            }
+            for (let i = 0; i < 10; i++) {
+                var str = fn1(10, 100);
+                arr.push(str)
+                
+            }
+            arr.sort((a,b)=>a-b)
+            console.log(arr)
+
+        //9.把两个数组合并成一个数组，删除第二个元素。
+            var arr = ['a','b','c'];
+            var arr2 = ['d','e','f'];
+            var a = arr.concat(arr2);
+            var b = a.splice(2,1);
+            console.log(a) //["a", "b", "d", "e", "f"]
+            console.log(b) //c
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*var arr=[]; //存放 10个数
+
+        function fn(istart,iend){
+            // var str = iend - istart +1; //加1是为了取到100
+            var str = iend - istart;
+            //Math.floor() === 向下取整
+            //Math.random()就是获取 0-1 之间的随机数（永远获取不到 1）
+            return Math.floor(Math.random()*str+istart)////[0,90]+10
+        }
+        for (let i = 0; i < 10; i++) {
+            var result = fn(11,100);
+            arr.push(result)   
+        }
+        arr.sort((a,b)=>a>b);
+        console.log(arr) 
+
+       //https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random 
+           本例中，我们将取得介于 1 到 10 之间的一个随机数：
+           Math.floor((Math.random()*10)+1);
+           本例中，我们将取得介于 1 到 10 之间的一个随机数：
+           Math.floor((Math.random()*10)+1);
+           */
+            var arr =[];
+           function fn1(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值 
+            }
+            for (let i = 0; i < 10; i++) {
+                var str = fn1(10, 100);
+                arr.push(str)
+                
+            }
+            arr.sort((a,b)=>a-b)
+            console.log(arr)
+            
+            
+    </script>
+</body>
+</html>
