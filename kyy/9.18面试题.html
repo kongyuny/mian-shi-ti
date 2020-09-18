@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*1,有这样一个URL:http://item.taobao.com/item.html?a=1&b=2&c=&d=xxx&e,请写一个函数，参数是URL，
+         提取URL中的各个中的get参数（参数名和参数个数不确定），将其按Key-value形式返回一个json结构，
+         如{a:'1',b:'2',c:'',d:'xxx',e:undefined} */
+         var str = 'URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e';
+         function fn(str){
+            var a =str.split("?")[1].split('&');
+            var obj ={};
+            for (let i = 0; i <a.length; i++) {
+                var res = a[i].split('=');
+                obj[res[0]] = res[1]; 
+            }
+            return obj;
+         }
+         console.log(fn(str))
+
+
+
+        //2,正则表达式构造函数 var reg = new RegExp('xxx');与正则表达字面量 var reg=//有什么不同？
+        // 写一个fn函数,用来判断是否是一个正确的邮箱地址，是返回true,不是返回false？
+            /*当使用RegExp()构造函数的时候，不仅需要转义引号（即\”表示”），
+            并且还需要双反斜杠（即\表示一个\）。使用正则表达字面量的效率更高。*/
+        //var reg = new RegExp('xxx');
+         var str = '123@qq.com';
+         function fn(str){
+            var reg =/^[a-zA-Z0-9\._-]+@[0-9a-z\._]+[a-zA-Z\d]+$/;
+            var isEmail = reg.test(str);
+            if(isEmail){
+                alert('正确的邮箱')
+            }else{
+                alert('你输入的邮箱有误');
+            }
+         }
+         fn(str);
+
+    
+        //3,写一个fn函数，清除字符串前后空格（兼容所有浏览器）
+            //var str = " abcd ".trim();
+
+        function fn(str){
+            var reg = /^\s*|\s*$/g; //前面的空格或者后面的空格
+            return str.replace(reg,'');
+        }
+        fn(str);
+        //4,写出今天的时间，格式为2020-9-18 13:30:05，封装成一个fn函数，函数最后将值打印到页面上
+        function createZero(n){
+            if(n<10){
+                return '0'+n;
+            }else{
+                return n;
+            }
+        }
+        function fn(){
+            var date = new Date();
+            var y = date.getFullYear();
+            var m = createZero(date.getMonth()+1);
+            var d = createZero(date.getDate());
+            var h = createZero(date.getHours());
+            var M = createZero(date.getMinutes());
+            var s = createZero(date.getSeconds());
+            var str = `${y}-${m}-${d} ${h}:${M}:${s}`;
+            console.log(str)
+        }
+        fn();  
+        //5,截取字符串abcdefg 的 efg
+        var str = 'abcdefg';
+        var a = str.substring(str.length-3);
+        var b = str.slice(str.length-3);
+        console.log(a,b)
+
+        //6,请你谈谈Cookie的弊端？
+
+        //7.写一个fn函数，使用fn 函数可以创建一个元素并返回，并且可以设置创建元素的标签类型，和innerHTML内容
+        
+        //8.内存泄漏有哪些？
+            全局变量
+            闭包引起内存泄漏
+            子元素存在引起的内存泄漏
+            被遗忘的定时器
+
+        //9.有一个数组arr=[1,2,3],写一个函数fn,fn包含数组的四种方法，pop,push shift unshift ,
+        //如调用fn(arr,push,4),返回arr=[1,2,3,4];如果是删除某一项fn(arr,pop),返回arr=[1,2];
+         
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    //    function fn(str){
+    //     var reg = /^\s*|\s*$/g; //前面的空格或者后面的空格
+    //     return str.replace(reg,'');
+    //    }
+    //    fn(str);
+    
+
+   /* myDate.getYear();        //获取当前年份(2位)
+    myDate.getFullYear();    //获取完整的年份(4位,1970-????)
+    myDate.getMonth();       //获取当前月份(0-11,0代表1月)
+    myDate.getDate();        //获取当前日(1-31)
+    myDate.getDay();         //获取当前星期X(0-6,0代表星期天)
+    myDate.getTime();        //获取当前时间(从1970.1.1开始的毫秒数)
+    myDate.getHours();       //获取当前小时数(0-23)
+    myDate.getMinutes();     //获取当前分钟数(0-59)
+    myDate.getSeconds();     //获取当前秒数(0-59)
+    myDate.getMilliseconds();    //获取当前毫秒数(0-999)
+    myDate.toLocaleDateString();     //获取当前日期
+    var mytime=myDate.toLocaleTimeString();     //获取当前时间
+    myDate.toLocaleString( );        //获取日期与时间 */
+    
+    function createZero(n){
+        if(n<10){
+            return '0'+n;
+        }else{
+            return n;
+        }
+    }
+    function fn(){
+        var date = new Date();
+        var y = date.getFullYear();
+        var m = createZero(date.getMonth()+1);
+        var d = createZero(date.getDate());
+        var h = createZero(date.getHours());
+        var M = createZero(date.getMinutes());
+        var s = createZero(date.getSeconds());
+        var str = `${y}-${m}-${d} ${h}:${M}:${s}`;
+        console.log(str)
+    }
+    fn();
+
+    
+
+   </script>
+</body>
+</html>
