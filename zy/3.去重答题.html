@@ -27,8 +27,7 @@
     // 事件绑定， 可以绑定多个事件； 依次触发
 
     // 4、添加删除替换插入到某个接点的方法
-    // splice   数组用  
-    // replace  字符串用
+
 
     // 5、什么是javascript的同源策略
     //  协议，域名，端口相同；同源策略是一种安全协议；
@@ -78,36 +77,37 @@
 
 
     // 2. 点一次增加一个数
-    // let box = [];
-    // function fn() {
-    //   for (var i = 0; i < 1; i++) {
-    //     let arr = Math.random();
-    //     arr = arr * 99;
-    //     arr = Math.floor(arr)
-    //     console.log(arr)
-    //     // 大于10的装进box数组
-    //     if (arr > 10) {
-    //       // 去重
-    //       if (box.indexOf(arr) === -1) {
-    //         box.push(arr)
-    //       } else {
-    //         fn()
-    //       }
-    //     } else {
-    //       fn()
-    //     }
-    //   }
-    //   // 排序
-    //   box.sort(function (a, b) {
-    //     return a - b
-    //   })
-    //   input.innerHTML = box
-    //   console.log(box)
-    // }
-    // //  监测不到box.length 变化
-    // show.onclick = box.length < 10 ? fn : null;
+    let box = [];
 
-    // console.log(box.length)
+    function fn() {
+      for (var i = 0; i < 1; i++) {
+        let arr = Math.random();
+        arr = arr * 99;
+        arr = Math.floor(arr)
+        console.log(arr)
+        // 大于10的装进box数组
+        if (arr > 10) {
+          // 去重
+          if (box.indexOf(arr) === -1) {
+            box.push(arr)
+          } else {
+            fn()
+          }
+        } else {
+          fn()
+        }
+      }
+      // 排序
+      box.sort(function (a, b) {
+        return a - b
+      })
+      input.innerHTML = box
+      console.log(box)
+    }
+    //  监测不到box.length 变化
+    show.onclick = box.length < 10 ? fn : null;
+
+    console.log(box.length)
 
 
     // 9、把两个数组合并，并删除第二个元素。|

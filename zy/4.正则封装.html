@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="show">
+
+  </div>
+  <script>
+    let show = document.getElementById('show');
+    // 1.有这样一个URL: http://item. taobao .com/item.htm?a=1&b=2&c=&d=xxx&e,请写一个fn函数， 参数是url,
+    //  提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回一个json结构，如{a:'1',b:'2',c:",b:'xxx' ,e:undefined}。
+    //  错的
+    // let URL = "URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+    // function fn(url) {
+    //   console.log(url.indexOf('?'))
+    //   console.log(url.slice(url.indexOf('?') + 1))
+    //   console.log(url.slice(url.indexOf('?') + 1).replace(/\=/g, ':'))
+    //   console.log(url.slice(url.indexOf('?') + 1).replace(/\=/g, ':').split('&'))
+    //   let arr = url.slice(url.indexOf('?') + 1).replace(/\=/g, ':').split('&')
+    //   for (var i = 0; i > arr.length; i++) {
+    //     if (arr[i].indexOf(':')) {
+    //       arr[i].push(':undefined')
+    //     }
+    //   }
+    //   console.log(arr)
+    // }
+    // fn(URL)
+    // -------------------------------------------------------
+    //  网上找的  没看懂
+    var str = "URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+    var arr1 = str.split("?")[1]
+    var arr2 = arr1.split("&")
+    var obj = {};
+    for (var i = 0; i < arr2.length; i++) {
+      var arr = arr2[i]
+      var pro = arr[0]
+      var len = arr.substring(1)
+      if (len == "=") {
+        len = " "
+      }
+      if (len == "") {
+        len = "undefined"
+      }
+      len = len.replace(/[=]/, "")
+      obj[pro] = len;
+    }
+    console.log(obj)
+    // =======================================================================================
+
+    // 2.正则表达式构造函数var reg=new RegEx:("xxx" )与正则表达字面量var reg-//有什么不同?写-个fn函数，
+    // 用来判断是否是一个正确的邮箱地址，是返回true, 不是返回false?
+    // let arr = '799695389@qq.com';
+    // let box = 'zxt@zhufeng-peixun-office.com';
+
+    // function fn(src) {
+    //   let arg = /^(\w+)@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*/;
+    //   return arg.test(src)
+    // }
+    // console.log(fn(arr))
+    // console.log(fn(box))
+    // ===========================================================================================
+
+    // 3.写一个fn函数，清除字符串前后的空格。(兼容所有 浏览器)
+    //  1.字符串方法的
+    // let ary = '          - ni hao 1   ';
+
+    // function fn(src) {
+    //   console.log(src)
+    //   if (src && typeof src === 'string') {
+    //     return src.trim()
+    //   }a
+    // }
+    // console.log(1, fn(ary), 1)
+
+    // 2.正则的
+    // let ary = '          - ni hao 1   ';
+    // function fn(src) {
+    //   console.log(src)
+    //   if (src && typeof src === 'string') {
+    //     return src.replace(/^(\s*)|(\s*)$/g, '')
+    //   }
+    // }
+    // console.log(1, fn(ary), 1)
+
+    // ====================================================================================================
+    // 4.写出今天的时间，格式为2020-9-18 13:30:05,封装成-个fn函数，函数最后将值打印到页面上
+    // function fn() {
+    //   var myDate = new Date();
+    //   let ary = myDate.toLocaleDateString(); //获取当前日期
+    //   let a = myDate.getHours(); // 时
+    //   let b = myDate.getHours(); // 分
+    //   let c = myDate.getSeconds(); // 秒
+    //   let arr = ary.replace(/\//g, '-')
+    //   let add = arr + ' ' + a + ':' + b + ':' + c;
+    //   console.log(add)
+    //   show.innerHTML = add;
+    // }
+    // fn()
+    // setInterval(fn, 1000)
+
+    // ===========================================================================================================
+    // 5.截取字符串abcdefg的efg
+    // let arr = 'abcdefg';
+    // let box = arr.substr((arr.indexOf('efg')), 3)
+    // console.log(box)
+
+    // =============================================================================================================
+    // 6.请你谈谈Cookie的弊端?
+    // cookie：默认保存到内存中，随浏览器关闭失效，可以设置过期事件；存储量4kB；保存在服务端，每次请求服务端都会带上，有点浪费资源
+    // localStorage：  理论上可以永久保存，除非主动清除；存储量4.98MB；保存在客户端，不与服务端交互
+    // sessionStorage；仅在当前页面有效，关闭页面或浏览器后清除；储存4.98MB；保存在客户端，不与服务端交互
+
+    // ===========================================================================================================
+    // 7. 写一个函数fn，使用fn函数可以创建一个元素并返回， 并且可以设置创建元素的标签类型，和innerHTML内容;
+
+    // =====================================================================================================
+    // 8.内存泄漏有哪些
+    // 没有解除引用的全局变量， 被闭包占用的父级变量都会一直存在内存中， 造成内存泄漏。
+
+    // =======================================================================================================
+    // 9.有一个数组arr=[1,2,3],写一个函数fn, fn包含数组的四种方法，pop, push, shift, unshift, 
+    // 如调用fn(arr,push,4) 返回arr= [1,2,3,4];如果是删除某一项fn(arr, pop),返回arr=[1, 2];
+    // let arr = [1, 2, 3];
+    // let push = '1';
+    // let pop = '2';
+    // let unshift = '3';
+    // let shift = '4';
+
+    // function fn(a, b, c) {
+    //   if (b === '1') {
+    //     a.push(c)
+    //   }
+    //   if (b === '2') {
+    //     a.pop()
+    //   }
+    //   if (b === '3') {
+    //     a.unshift(c)
+    //   }
+    //   if (b === '4') {
+    //     a.shift()
+    //   } else {
+    //     false
+    //   }
+    //   return a
+    // }
+    // console.log(arr)
+    // fn(arr, push, 6)
+    // console.log(arr)
+    // fn(arr, pop)
+    // console.log(arr)
+    // fn(arr, unshift, 4)
+    // console.log(arr)
+    // fn(arr, shift)
+    // console.log(arr)
+  </script>
+</body>
+
+</html>
