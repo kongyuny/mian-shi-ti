@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="right">
+    <div class="right-div">
+      HELLO WORLD
+    </div>
+  </div>
+  <script>
+    // 1.call和apply的区别
+    // call 可以传多个参数
+    // apply 传递一个数组
+
+    // 2.解释jsonp的原理，以及为什么不是真正的ajax
+    //  ajax支持get和post请求，通过xmlHttpRequest获取非本页内容；
+    //  jsonp只支持 get请求，通过添加script标签调用服务器提供的js脚本
+
+    // 3.document load和document ready的区别
+    // DOM文档解析：
+    // 1.解析html结构
+    // 2.加载脚本和样式文件
+    // 3.解析并执行脚本
+    // 4.构造html的DOM模型
+    // （执行 ready）
+    // 5.加载图片等外部资源文件
+    // 6.页面加载完毕
+    // （执行load）
+    // 没有图片或媒体文件的话，两个差不多；有的话ready比较快
+
+    // 4.字符串反转，如将'12345678'成'87654321'
+    // let arr = '12345678';
+    // console.log(arr.split("").reverse().join(""))
+
+    // 5.将数字12345678转化成RMB形式如: 12,345,678
+    // let arr = '12345678';
+    // let a = '1531531548';
+
+    // function fn(arr) {
+    //   let box = arr.split("").reverse()
+    //   let obj = [];
+    //   for (var i = 0; i < box.length; i++) {
+    //     if (obj.length === 0) {
+    //       obj.push(box[i])
+    //     }
+    //     if (obj.length % 4 === 0) {
+    //       obj.push(',')
+    //       obj.push(box[i])
+
+    //     } else {
+    //       obj.push(box[i])
+    //     }
+    //   }
+    //   obj.shift()
+    //   console.log(obj)
+    //   return obj.reverse().join("")
+    // }
+    // console.log(fn(arr))
+    // console.log(fn(a))
+
+
+    // 6.生成5个不同的随机数;
+    // function fn() {
+    //   let box = [];
+    //   for (var i = 0; box.length < 1; i++) {
+    //     let arr = Math.random();
+    //     arr = arr * 99999;
+    //     arr = Math.floor(arr)
+    //     console.log(arr)
+    //     if (arr > 10000) {
+    //       box.push(arr)
+    //     }
+    //   }
+    //   return box
+    // }
+    // console.log(fn());
+    // 7.window.location.reload()作用?
+    // 刷新页面
+
+
+    // 8.js不善于处理小数，如果5.37*7.89=?,- 般我们会怎么解决才能得到精确的计算结果?
+    //  没看明白  需求
+    function fn(a, b) {
+      console.log(a * b)
+    }
+    fn('5.37', '7.89')
+    // 9. 0.5px边框css如何定义
+  </script>
+  <style>
+    .right {
+      position: relative;
+      font-size: 16px;
+      display: inline-block;
+    }
+
+    .right .right-div:before {
+      content: " ";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 1px;
+      height: 100%;
+      border-right: 1px solid red;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+  </style>
+</body>
+
+</html>
