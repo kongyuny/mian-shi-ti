@@ -77,14 +77,29 @@
         console.log(a,b)
 
         //6,请你谈谈Cookie的弊端？
+        1.cookie数量和长度的限制。只有4kb的内存，使用cookie储存需要自己手动封装
+        2.安全性问题。
+        3.有些状态不可能保存在客户端。
 
-        //7.写一个fn函数，使用fn 函数可以创建一个元素并返回，并且可以设置创建元素的标签类型，和innerHTML内容
+        //7.写一个fn函数，使用fn 函数可以创建一个元素并返回，并且可以设置创建元素的标签类型
+        //和innerHTML内容
+            function fn(obj){
+                const nevElement = document.createElement(obj.name);
+                nevElement.innerHTML = `${obj.text}${obj.name}标签`;
+                return nevElement;
+            }
+            const obj = {
+                name:"div",
+                text:'我是一个',
+            }
+            console.log(fn(obj))
         
         //8.内存泄漏有哪些？
             全局变量
             闭包引起内存泄漏
             子元素存在引起的内存泄漏
             被遗忘的定时器
+            没有清理的DOM引用
 
         //9.有一个数组arr=[1,2,3],写一个函数fn,fn包含数组的四种方法，pop,push shift unshift ,
         //如调用fn(arr,push,4),返回arr=[1,2,3,4];如果是删除某一项fn(arr,pop),返回arr=[1,2];

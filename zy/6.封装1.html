@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="box">点击</button>
+  <script>
+    // 1. 匹配输入的字符: 第一个必须是字母或下划线开头， 后面就是字母和数字或者下划线构成， 长度5 - 20
+    // let arr = '_daew_f332s_dsa33fFF';
+    // let obj = /^(_|[a-zA-Z])+\w{4,19}$/
+    // console.log(obj.test(arr))
+
+    // 2. 如何检查array object json的类型 ?
+
+
+    // 3. 如何给一个元素绑定事件， 至少写出两种 ?
+    let box = document.querySelector(".box")
+    box.onclick = function () {
+      alert(1)
+    }
+    // 4. 已知数组var stringArray = ["This", "is", "Baidu", "Campus"], Alert 出 "This is Baidu Campus"。
+    var stringArray = ["This", "is", "Baidu", "Campus"]
+
+    function Alert(src) {
+      return src.join('&').replace(/&/g, ' ')
+    }
+    console.log(Alert(stringArray))
+
+    // 5. 已知有字符串foo = "get-element-by-id", 写 - 个function将其转化成驼峰表示法 'getElementByld'.
+    // let foo = "get-element-by-id"
+    // let arr = "de-fsg-ade-gsd"
+
+    // function fn(foo) {
+    //   let obj = foo.split('-');
+    //   let box = [];
+    //   for (var i = 0; obj.length > i; i++) {
+    //     if (box.length === 0) {
+    //       box.push(obj[i])
+    //     } else {
+    //       box.push(obj[i].toUpperCase().substr(0, 1) + obj[i].substring(1))
+    //     }
+    //   }
+    //   return box.join('')
+    // }
+    // console.log(fn(foo))
+    // console.log(fn(arr))
+
+
+    // 6. speifyl('hello,woll') //=>'h,e,l,l,o,w,o,l,l'实现specify函数
+    // function speifyl(src) {
+    //   let obj = src.replace(/,/g, '').split('')
+    //   let box = [];
+    //   console.log(obj)
+    //   for (var i = 0; obj.length > i; i++) {
+    //     box.push(obj[i])
+    //     box.push(',')
+    //   }
+    //   return box.join('')
+    // }
+    // console.log(speifyl('hello,woll'))
+    // console.log(speifyl('hello,woll,werw,rysf33'))
+
+    // 7. 请尽可能详尽的解释ajax的工作原理
+    // 第一步: 创建ajax对象（ XMLHttpRequest / ActiveXObject(Microsoft.XMLHttp)）
+    // 第二步: 判断数据传输方式（ get / post）
+    // 第三步: 打开连接 open()
+    // 第四步: 发送send()
+    // 当ajax对象完成第四步（onreadystatechange） 数据接收完成，判断http响应状态（status）200 - 300 之间或者304（ 缓存） 执行回调函数
+
+    // 8 写出一个三元表达式， 并将值返回赋值给A
+
+    // let A = 5
+    // A > 0 ? A++ : A--
+    // console.log(A)
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //1，call和apply区别？
+        参数不一样
+        call(0,5,7) 一个是列表形式
+        apply(0,[5,7])另一个是数组形式
+
+        //2，解释jsonp的原理，以及为什么不是真正的ajax
+            动态创建script标签，回调函数 可以解决跨域问题
+            Ajax是页面无刷新请求数据操作
+
+        //3,document.onload 和document.ready的区别
+            document.onload是在dom文档树加载完和所有文件加载完成之后执行的一个函数 只能出现一次
+            document.ready 在dom文档树加载完执行的一个函数并不是所有文件加载完  多次出现
+
+        //4,字符串反转，如‘12345678‘变成’87654321‘
+        var a = '12345678';
+        var str = a.split('').reverse().join('')
+        console.log(str)
+
+        //5,将数字12345678转化RMB形式12，345，678
+
+        var str = '12345678';
+        var a = str.split('')
+        a.splice(2,0,',');
+        a.splice(6,0,',');
+        var s = a.join('')
+        console.log(s) //12,345,678
+
+        //6,生成5个不同的随机数
+
+        var obj = [];
+        var temp = [];
+        function fn(istart,iend){
+            return Math.floor(Math.random() * (iend - istart + 1)) + istart; //含最大值，含最小值 
+        }
+       for (let i = 0; i <5; i++) {
+           var str = fn(1,100)
+           obj.push(str); 
+       }
+        for (let i = 0; i < obj.length; i++) {
+            if(temp.indexOf(obj[i])===-1){  // temp.indexOf(arr[i]) 通过数组的下标查找没有查找的值，始终为-1
+                temp.push(obj[i]) //temp 数组没有相同的值，就加入数组中，反之
+            }
+        }
+        temp.sort((a,b)=>a-b)
+        //7,window.location.reload()作用
+            页面刷新  https://www.jb51.net/article/74720.htm
+        //8,js不善于处理小数。如5.37*7.89 = ？一般我们会怎么解决才能精得到精确的计算结果？
+            var a = ((5.37*100)*(7.89*100))/100
+        //9,0.5px边框css如何定义
+
+        <style>
+            .box {
+                position: relative;
+                height:200px;
+                width:200px;
+            }
+            .box:before {
+                content: "";
+                position: absolute;
+                width: 200%;
+                height: 200%;
+                border: 1px solid blue;
+                transform: scale(0.5);
+                transform-origin: left top;
+            }
+        </style>
+      <div class='box'></div>
+    </script>
+</body>
+</html>

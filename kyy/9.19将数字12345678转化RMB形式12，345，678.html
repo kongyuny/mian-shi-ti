@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = '12345678';
+        var a = str.split('')
+        a.splice(2,0,',');
+        a.splice(6,0,',');
+        var s = a.join('')
+        console.log(s) //12,345,678
+    </script>
+</body>
+</html>

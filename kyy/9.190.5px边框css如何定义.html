@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width: 200px;height: 200px;}
+    </style>
+</head>
+<body>
+      <style>
+      .box {
+          position: relative;
+          height:200px;
+          width:200px;
+      }
+      .box:before {
+          content: "";
+          position: absolute;
+          width: 200%;
+          height: 200%;
+          border: 1px solid blue;
+          transform: scale(0.5);
+          transform-origin: left top;
+      }
+      </style>
+      <div class='box'></div>
+</body>
+</html>

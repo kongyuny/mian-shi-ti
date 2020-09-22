@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn(obj){
+            const nevElement = document.createElement(obj.name);
+            nevElement.innerHTML = `${obj.text}${obj.name}标签`;
+            return nevElement;
+        }
+        const obj = {
+            name:"div",
+            text:'我是一个',
+        }
+        console.log(fn(obj))
+        
+    </script>
+</body>
+</html>
