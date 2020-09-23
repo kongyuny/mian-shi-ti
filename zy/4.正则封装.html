@@ -8,50 +8,50 @@
 </head>
 
 <body>
-  <div id="show">
+  <!-- <div id="show"> -->
 
-  </div>
+  <!-- </div> -->
   <script>
-    let show = document.getElementById('show');
+    // let show = document.getElementById('show');
     // 1.有这样一个URL: http://item. taobao .com/item.htm?a=1&b=2&c=&d=xxx&e,请写一个fn函数， 参数是url,
     //  提取URL中的各个GET参数(参数名和参数个数不确定)，将其按key-value形式返回一个json结构，如{a:'1',b:'2',c:",b:'xxx' ,e:undefined}。
     //  错的
-    // let URL = "URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
-    // function fn(url) {
-    //   console.log(url.indexOf('?'))
-    //   console.log(url.slice(url.indexOf('?') + 1))
-    //   console.log(url.slice(url.indexOf('?') + 1).replace(/\=/g, ':'))
-    //   console.log(url.slice(url.indexOf('?') + 1).replace(/\=/g, ':').split('&'))
-    //   let arr = url.slice(url.indexOf('?') + 1).replace(/\=/g, ':').split('&')
-    //   for (var i = 0; i > arr.length; i++) {
-    //     if (arr[i].indexOf(':')) {
-    //       arr[i].push(':undefined')
-    //     }
-    //   }
-    //   console.log(arr)
+
+    // function fn(str) {
+    //   const index = str.indexOf('?');
+    //   if (index !== -1) str = str.substring(index + 1);
+    //   let arr = str.split('&');
+    //   let json = {};
+    //   arr.forEach(item => {
+    //     item = item.split('=');
+    //     json[item[0]] = item[1]
+    //   })
+    //   return json;
     // }
-    // fn(URL)
+    // let str = 'http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e';
+    // console.log(fn(str));
+
     // -------------------------------------------------------
     //  网上找的  没看懂
-    var str = "URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
-    var arr1 = str.split("?")[1]
-    var arr2 = arr1.split("&")
-    var obj = {};
-    for (var i = 0; i < arr2.length; i++) {
-      var arr = arr2[i]
-      var pro = arr[0]
-      var len = arr.substring(1)
-      if (len == "=") {
-        len = " "
-      }
-      if (len == "") {
-        len = "undefined"
-      }
-      len = len.replace(/[=]/, "")
-      obj[pro] = len;
-    }
-    console.log(obj)
-    // =======================================================================================
+    // var str = "URL：http://item.taobao.com/item.htm?a=1&b=2&c=&d=xxx&e";
+    // var arr1 = str.split("?")[1]
+    // var arr2 = arr1.split("&")
+    // var obj = {};
+    // for (var i = 0; i < arr2.length; i++) {
+    //   var arr = arr2[i]
+    //   var pro = arr[0]
+    //   var len = arr.substring(1)
+    //   if (len == "=") {
+    //     len = " "
+    //   }
+    //   if (len == "") {
+    //     len = "undefined"
+    //   }
+    //   len = len.replace(/[=]/, "")
+    //   obj[pro] = len;
+    // }
+    // console.log(obj)
+    // // =======================================================================================
 
     // 2.正则表达式构造函数var reg=new RegEx:("xxx" )与正则表达字面量var reg-//有什么不同?写-个fn函数，
     // 用来判断是否是一个正确的邮箱地址，是返回true, 不是返回false?
@@ -91,18 +91,28 @@
     // ====================================================================================================
     // 4.写出今天的时间，格式为2020-9-18 13:30:05,封装成-个fn函数，函数最后将值打印到页面上
     // function fn() {
-    //   var myDate = new Date();
-    //   let ary = myDate.toLocaleDateString(); //获取当前日期
-    //   let a = myDate.getHours(); // 时
-    //   let b = myDate.getHours(); // 分
-    //   let c = myDate.getSeconds(); // 秒
-    //   let arr = ary.replace(/\//g, '-')
-    //   let add = arr + ' ' + a + ':' + b + ':' + c;
+    //   var myDate = new Date(); // 先new 一个Date时间
+    //   let ary = myDate.toLocaleDateString(); //获取当前日期， 不兼容
+
+    //   let fullyear = myDate.getFullYear(); // 年
+    //   let month = myDate.getMonth() + 1; // 月   因为从0开始，所以要+1
+    //   let date = myDate.getDate(); // 日
+    //   let hours = myDate.getHours(); // 时
+    //   let minutes = myDate.getMinutes(); // 分
+    //   let seconds = myDate.getSeconds(); // 秒
+    //   let milliseconds = myDate.getMilliseconds(); // 毫秒
+
+    //   let add = `${fullyear}-${bl(month)}-${bl(date)} ${bl(hours)}:${bl(minutes)}:${bl(seconds)}:${milliseconds}`
     //   console.log(add)
+    //   // 补零
+    //   function bl(number) {
+    //     let box = number < 10 ? '0' + number : number
+    //     return box
+    //   }
     //   show.innerHTML = add;
     // }
     // fn()
-    // setInterval(fn, 1000)
+    // setInterval(fn, 1000) // 每秒执行一次
 
     // ===========================================================================================================
     // 5.截取字符串abcdefg的efg
@@ -118,7 +128,16 @@
 
     // ===========================================================================================================
     // 7. 写一个函数fn，使用fn函数可以创建一个元素并返回， 并且可以设置创建元素的标签类型，和innerHTML内容;
-
+    // function box(src) {
+    //   let obj = document.createElement(src.name);
+    //   obj.innerHTML = `${src.tien}${src.name}`
+    //   return obj
+    // }
+    // let json = {
+    //   name: 'div',
+    //   tien: '我是一个'
+    // }
+    // console.log(box(json))
     // =====================================================================================================
     // 8.内存泄漏有哪些
     // 没有解除引用的全局变量， 被闭包占用的父级变量都会一直存在内存中， 造成内存泄漏。
@@ -126,38 +145,37 @@
     // =======================================================================================================
     // 9.有一个数组arr=[1,2,3],写一个函数fn, fn包含数组的四种方法，pop, push, shift, unshift, 
     // 如调用fn(arr,push,4) 返回arr= [1,2,3,4];如果是删除某一项fn(arr, pop),返回arr=[1, 2];
-    // let arr = [1, 2, 3];
-    // let push = '1';
-    // let pop = '2';
-    // let unshift = '3';
-    // let shift = '4';
+    let arr = [1, 2, 3];
 
-    // function fn(a, b, c) {
-    //   if (b === '1') {
-    //     a.push(c)
-    //   }
-    //   if (b === '2') {
-    //     a.pop()
-    //   }
-    //   if (b === '3') {
-    //     a.unshift(c)
-    //   }
-    //   if (b === '4') {
-    //     a.shift()
-    //   } else {
-    //     false
-    //   }
-    //   return a
-    // }
-    // console.log(arr)
-    // fn(arr, push, 6)
-    // console.log(arr)
-    // fn(arr, pop)
-    // console.log(arr)
-    // fn(arr, unshift, 4)
-    // console.log(arr)
-    // fn(arr, shift)
-    // console.log(arr)
+    function fn(src) {
+      console.log(src)
+      switch (src.type) {
+        case 'push':
+          console.log(src.arr)
+          console.log(src.value)
+          src.arr.push(src.value)
+          break
+        case 'pop':
+          src.arr.pop()
+          break
+        case 'unshift':
+          src.arr.unshift()
+          break
+        case 'shift':
+          src.arr.shift(src.value)
+          break;
+        default:
+          break
+      }
+      return src.arr
+    }
+    let json1 = {
+      arr,
+      type: 'push',
+      value: 4
+    }
+
+    console.log(fn(json1))
   </script>
 </body>
 
