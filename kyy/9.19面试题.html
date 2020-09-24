@@ -8,7 +8,7 @@
 <body>
     <script>
        //1，call和apply区别？
-        参数不一样
+        都可以改变this指向，参数不一样
         call(0,5,7) 一个是列表形式
         apply(0,[5,7])另一个是数组形式
 
@@ -26,35 +26,43 @@
         console.log(str)
 
         //5,将数字12345678转化RMB形式12，345，678
+          let str = '12345678965468798';
+          let strArr = [];
+          let arr = [];
+          strArr = str.split('');
+          while(strArr.length > 1) {
+            if(strArr.length > 3) {
+              arr.unshift(strArr.splice(strArr.length - 3).join(''))
+            }else{
+              arr.unshift(strArr.splice(0).join(''))
+            }
+          }
+          arr = arr.join(',');
+          console.log(strArr)
+          console.log(arr);
 
-        var str = '12345678';
-        var a = str.split('')
-        a.splice(2,0,',');
-        a.splice(6,0,',');
-        var s = a.join('')
-        console.log(s) //12,345,678
-
+        
+        var str = '12345678912323455435';
+      
         //6,生成5个不同的随机数
 
-        var obj = [];
-        var temp = [];
         function fn(istart,iend){
             return Math.floor(Math.random() * (iend - istart + 1)) + istart; //含最大值，含最小值 
         }
-       for (let i = 0; i <5; i++) {
-           var str = fn(1,100)
-           obj.push(str); 
+        var obj = [];
+       while (obj.length<5) {
+           var str = fn(10,100)
+           if(obj.indexOf(str)===-1){
+               obj.push(str)
+           }
+           
        }
-        for (let i = 0; i < obj.length; i++) {
-            if(temp.indexOf(obj[i])===-1){  // temp.indexOf(arr[i]) 通过数组的下标查找没有查找的值，始终为-1
-                temp.push(obj[i]) //temp 数组没有相同的值，就加入数组中，反之
-            }
-        }
-        temp.sort((a,b)=>a-b)
+       console.log(obj)
+
         //7,window.location.reload()作用
             页面刷新  https://www.jb51.net/article/74720.htm
         //8,js不善于处理小数。如5.37*7.89 = ？一般我们会怎么解决才能精得到精确的计算结果？
-            var a = ((5.37*100)*(7.89*100))/100
+            var a = (5.37*100)*(7.89*100)/10000
         //9,0.5px边框css如何定义
 
         <style>
@@ -70,6 +78,7 @@
                 height: 200%;
                 border: 1px solid blue;
                 transform: scale(0.5);
+                // transform: scaleY(0.5);
                 transform-origin: left top;
             }
         </style>

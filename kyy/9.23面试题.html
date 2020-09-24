@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        1,HTTP协议中，GET和POST有什么区别？分别适用什么场景？
+            get  是获取数据   不安全    请求能够被缓存，默认的请求方式也是有缓存的
+            post 是提交数据   相对安全  请求方式没有缓存
+
+        2,HTTP状态消息 200 302 304 403 404 500 分别表示什么
+            200 ok 服务器成功处理请求
+            304 发送附带条件的请求时，条件不满足时返回，与重定向无关
+            403 对被请求页面禁止访问
+            404 服务器无法找到被请求的页面
+            500 服务器端错误
+
+        3，请求头，ETag和if-None-Match有什么作用
+
+
+        4，你在平时开发中如何调试代码？
+            用断点
+            debugger
+
+
+        5，解释什么是xss攻击
+          xss攻击，即跨站脚本攻击，是一种语序攻击者在另一个用户的浏览器中执行恶意代码脚本注入式攻击。他是web程序常见的漏洞
+
+        6，请写出至少三个javascript的全局函数
+            parseInt(str)
+            parseFloat(str)
+            eval(code)
+            setTimeout(function(){},3000)
+            setInterval(function(){},3000)
+        7，手写一个闭包函数
+            function fn(){
+                var a = 10;
+                function fn2(){
+                    console.log(a)
+                }
+                fn2();
+            }
+            fn();
+        
+        8，列举哪些方面对前端开发进行优化
+         （1）减少Http请求次数，合并js文件/css文件/雪碧图的使用
+         （2）少用全局变量.缓存DOM节点查找的结果。
+         （3）图片预加载，将样式表放在顶部，将脚本放在底部，
+         （4）减少DOM元素数量
+    </script>
+</body>
+</html>

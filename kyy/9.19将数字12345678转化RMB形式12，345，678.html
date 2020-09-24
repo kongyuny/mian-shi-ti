@@ -7,12 +7,41 @@
 </head>
 <body>
     <script>
-        var str = '12345678';
-        var a = str.split('')
-        a.splice(2,0,',');
-        a.splice(6,0,',');
-        var s = a.join('')
-        console.log(s) //12,345,678
+       // 先转化为字符串
+//     var str = '1234567877dd'
+// // 封装一个反转字符串的方法
+//     var str = str.split('').reverse().join('')
+
+// //每三位字符加一个 ','的方法
+// function toRMB(str){
+//   var rmb = ''
+//   for(var i = 1; i <= str.length; i++){
+//     rmb += str[i - 1] 　　// 添加字符串的每一项
+//     if( i % 3 == 0 && i != str.length ){　　//判断每三个字符串添加一个','   索引是从零开始的所以 i != str.length
+//       rmb += ','
+//     }
+//   }
+//   return rmb
+// }
+// var a = toRMB(str).split('').reverse().join('')
+// // 调用函数
+// console.log(a) // 12,345,678
+
+
+     let str = '12345678965468798';
+      let strArr = [];
+      let arr = [];
+      strArr = str.split('');
+      while(strArr.length > 1) {
+        if(strArr.length > 3) {
+          arr.unshift(strArr.splice(strArr.length - 3).join(''))
+        }else{
+          arr.unshift(strArr.splice(0).join(''))
+        }
+      }
+      arr = arr.join(',');
+      console.log(strArr)
+      console.log(arr);
     </script>
 </body>
 </html>

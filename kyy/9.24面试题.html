@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <ul >
+            <li id="li1"> 按钮</li>
+        </ul>
+    </div>
+    <script>
+        // 1,写一个函数可以计算 sum(5,0,-5)输入0；sum(1,2,3,4);输入10；
+        // function sum() {
+        //     var result = 0;
+        //     for (var i = 0; i < arguments.length; i++) {
+        //         var obj = arguments[i];
+        //         result += obj;
+        //     }
+        //     return result;
+        //     }
+        // alert(sum(5,0,-5));
+
+
+        // function sum(){
+        //     var obj =0;
+        //     for (let i = 0; i < arguments.length; i++) {
+        //         obj = (arguments[0]+arguments[1])+arguments[2]+arguments[3];
+        //     }
+        //     return obj;
+        // }
+        // console.log(sum(1,2,3,4))
+
+        // 2，事件委托是什么，怎么实现
+        //利用事件冒泡的原理，让自己所触发的事件，让他的父元素代替执行！
+        // window.onload=function(){
+        //     var li1 = document.getElementById('li1');
+        //     li1.onclick = function (ev){
+        //         var ev = ev || window.event;
+        //         var target = ev.target || ev.srcElement;
+        //         if(li1.nodeName.toLowerCase() =="li"){
+        //             target.style.background = 'red'
+        //             console.log(target.innerHTML)
+        //         }
+        //     }
+        // }
+
+            
+        // 3，《正则》写出正确的正则表达式匹配固定号，区号3-4位，第一位为0，中横线，7-8位数字，中横线，
+        //3-4位分机号格式的固话号
+            
+            // var str = "0100-7891432-134"
+            // var reg = /^(0\d{2,3}\-)(\d{7-8}\-)(\d{3-4})$/;
+            // var result = reg.test(str);
+            // if(result){
+            //     alert("正确的电话")
+            // }else{
+            //     alert('错误的')
+            // }
+        //4，写出代码对下列数组去重并从大到小排列{5,2,3,6,8,6,5,4,7,1,9}
+            //ES6 https://segmentfault.com/a/1190000016418021?utm_source=tag-newest
+            // function fn(arr){
+            //     arr.sort((a,b)=>a-b)
+            //     return Array.from(new Set(arr))
+            // }
+            // console.log(fn([5,2,3,6,8,6,5,4,7,1,9]))
+            
+            //indexOf
+            // function fn(arr){
+            //     var array = [];
+            //     for (let i = 0; i < arr.length; i++) {
+            //         if(array.indexOf(arr[i])===-1){
+            //            array.push(arr[i]) 
+            //         }
+            //     }
+            //     array.sort((a,b)=>a-b)
+            //     return array;
+            // }
+            // console.log(fn([5,2,3,6,8,6,5,4,7,1,9]))
+
+
+        // 5,请写一个正则表达式，要求最短6位数，最长20位，阿拉伯数和英文字母（不区分大小写）组成
+                // var str = '123adfdsfdfgdl'
+                // var reg = /[\da-zA-Z]{6,20}/;
+                // var result = reg.test(str);
+                // console.log(result)
+
+        // 6，统计1到400亿之间的自然数中含有多少个1？比如1-21中，有1，10，11，12，13，14，15，16，17，18，19，20，21这么多自然数有13个1
+
+        // 7，删除与某个字符相邻且相同的字符，比如fdaffdaaklfjklja 字符串处理之后"fdafdaklfjklja"
+                
+
+                function fn (str){
+                    var newStr = '',arr=[];
+                    for (let i = 0; i < str.length; i++) {
+                        if(str.charAt(i)!==arr){
+                            arr = str.charAt(i); //fdafdaklfjklja
+                            newStr+=arr;
+
+                        }
+                        // if(!newStr.length || newStr[newStr.length - 1] != str[i]){
+                        //     arr.push(str[i]);
+                        //      newStr = arr.join("");
+                        // }
+                        
+                    }
+                    return newStr;
+                }
+                var str = 'fdaffdaaklfjklja'; //fdafdaklfjklja
+                console.log(fn (str))
+
+        // 8,将字符串“<tr><td>{$id}</td><td>{$name}</td></tr>"中的{$id}替换成10，{$name}替换成Tony
+        var map={"id":"10","name":"Tony"};
+        var input="<tr><td>{$id}</td><td>{$name}</td></tr>";
+        /**
+        **根据传入的数据源字段值，去替换字符串
+        **/
+        function setData(dataObj,template){
+            return template.replace(/{\$([^{}]+)}/g,function(match,group1){
+                return dataObj[group1];
+            });
+        }
+        console.log(setData(map,input));
+
+        // 9,给String对象添加一个方法，传入一个string类型的参数，然后将string的每个字符间价格空格返回，例如：addSpace('hello world') //hello  ? world
+
+        // var str="Hello world!";
+        //     function addSpace(str){
+        //             return str.split(" ").join(" ? ");
+        //     }
+        // 　　　　console.log(addSpace("hello world"));
+    </script>
+</body>
+</html>

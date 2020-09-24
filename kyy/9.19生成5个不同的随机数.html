@@ -7,25 +7,19 @@
 </head>
 <body>
     <script>
-        var obj = [];
-        var temp = [];
+        
         function fn(istart,iend){
             return Math.floor(Math.random() * (iend - istart + 1)) + istart; //含最大值，含最小值 
         }
-
-       for (let i = 0; i <5; i++) {
-           var str = fn(1,100)
-           obj.push(str); 
+        var obj = [];
+       while (obj.length<5) {
+           var str = fn(10,100)
+           if(obj.indexOf(str)===-1){
+               obj.push(str)
+           }
+           
        }
-
-        for (let i = 0; i < obj.length; i++) {
-            if(temp.indexOf(obj[i])===-1){  // temp.indexOf(arr[i]) 通过数组的下标查找没有查找的值，始终为-1
-                temp.push(obj[i]) //temp 数组没有相同的值，就加入数组中，反之
-            }
-        }
-        temp.sort((a,b)=>a-b)
        console.log(obj)
-       console.log(temp) //[5, 53, 14, 64]
     </script>
 </body>
 </html>
