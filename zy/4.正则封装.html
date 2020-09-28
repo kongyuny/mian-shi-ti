@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <!-- <div id="show"> -->
+  <div id="show">
 
-  <!-- </div> -->
+  </div>
   <script>
     // let show = document.getElementById('show');
     // 1.有这样一个URL: http://item. taobao .com/item.htm?a=1&b=2&c=&d=xxx&e,请写一个fn函数， 参数是url,
@@ -90,28 +90,26 @@
 
     // ====================================================================================================
     // 4.写出今天的时间，格式为2020-9-18 13:30:05,封装成-个fn函数，函数最后将值打印到页面上
-    // function fn() {
-    //   var myDate = new Date(); // 先new 一个Date时间
-    //   let ary = myDate.toLocaleDateString(); //获取当前日期， 不兼容
+    function fn() {
+      var myDate = new Date(); // 先new 一个Date时间
+      let fullyear = myDate.getFullYear(); // 年
+      let month = myDate.getMonth() + 1; // 月   因为从0开始，所以要+1
+      let date = myDate.getDate(); // 日
+      let hours = myDate.getHours(); // 时
+      let minutes = myDate.getMinutes(); // 分
+      let seconds = myDate.getSeconds(); // 秒
+      let milliseconds = myDate.getMilliseconds(); // 毫秒
 
-    //   let fullyear = myDate.getFullYear(); // 年
-    //   let month = myDate.getMonth() + 1; // 月   因为从0开始，所以要+1
-    //   let date = myDate.getDate(); // 日
-    //   let hours = myDate.getHours(); // 时
-    //   let minutes = myDate.getMinutes(); // 分
-    //   let seconds = myDate.getSeconds(); // 秒
-    //   let milliseconds = myDate.getMilliseconds(); // 毫秒
-
-    //   let add = `${fullyear}-${bl(month)}-${bl(date)} ${bl(hours)}:${bl(minutes)}:${bl(seconds)}:${milliseconds}`
-    //   console.log(add)
-    //   // 补零
-    //   function bl(number) {
-    //     let box = number < 10 ? '0' + number : number
-    //     return box
-    //   }
-    //   show.innerHTML = add;
-    // }
-    // fn()
+      let add = `${fullyear}-${bl(month)}-${bl(date)} ${bl(hours)}:${bl(minutes)}:${bl(seconds)}:${milliseconds}`
+      console.log(add)
+      // 补零
+      function bl(number) {
+        let box = number < 10 ? '0' + number : number
+        return box
+      }
+      show.innerHTML = add;
+    }
+    fn()
     // setInterval(fn, 1000) // 每秒执行一次
 
     // ===========================================================================================================
@@ -145,37 +143,37 @@
     // =======================================================================================================
     // 9.有一个数组arr=[1,2,3],写一个函数fn, fn包含数组的四种方法，pop, push, shift, unshift, 
     // 如调用fn(arr,push,4) 返回arr= [1,2,3,4];如果是删除某一项fn(arr, pop),返回arr=[1, 2];
-    let arr = [1, 2, 3];
+    // let arr = [1, 2, 3];
 
-    function fn(src) {
-      console.log(src)
-      switch (src.type) {
-        case 'push':
-          console.log(src.arr)
-          console.log(src.value)
-          src.arr.push(src.value)
-          break
-        case 'pop':
-          src.arr.pop()
-          break
-        case 'unshift':
-          src.arr.unshift()
-          break
-        case 'shift':
-          src.arr.shift(src.value)
-          break;
-        default:
-          break
-      }
-      return src.arr
-    }
-    let json1 = {
-      arr,
-      type: 'push',
-      value: 4
-    }
+    // function fn(src) {
+    //   console.log(src)
+    //   switch (src.type) {
+    //     case 'push':
+    //       console.log(src.arr)
+    //       console.log(src.value)
+    //       src.arr.push(src.value)
+    //       break
+    //     case 'pop':
+    //       src.arr.pop()
+    //       break
+    //     case 'unshift':
+    //       src.arr.unshift()
+    //       break
+    //     case 'shift':
+    //       src.arr.shift(src.value)
+    //       break;
+    //     default:
+    //       break
+    //   }
+    //   return src.arr
+    // }
+    // let json1 = {
+    //   arr,
+    //   type: 'push',
+    //   value: 4
+    // }
 
-    console.log(fn(json1))
+    // console.log(fn(json1))
   </script>
 </body>
 

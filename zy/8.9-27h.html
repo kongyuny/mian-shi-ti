@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // let arr = '56879'
+    // console.log(arr.length)
+    // console.log(Math.floor(arr.length / 2));
+
+    // 1. js中哪些会被隐式转换成false
+    // !true
+    // if (1 == 0)
+    // if (1 === 0)
+    // if(0)
+    // if(null)
+    // if('')
+    // if(undefined)
+    // if(NaN)
+
+    // 2. 用定时器写 - 个时钟
+    // function arr() {
+    //   let de = new Date;
+    //   let fullyear = de.getFullYear();
+    //   let month = de.getMonth() + 1;
+    //   let date = de.getDate();
+
+    //   let hours = de.getHours();
+    //   let minutes = de.getMinutes();
+    //   let seconds = de.getSeconds();
+    //   let obj = `${fullyear}-${bl(month)}-${bl(date)} ${bl(hours)}-${bl(minutes)}-${bl(seconds)}`
+
+    //   function bl(number) {
+    //     let box = number < 10 ? '0' + number : number
+    //     return box
+    //   }
+    //   console.log(obj)
+    //   return
+    //   obj
+    // }
+    // setInterval(arr,
+    //   1000)
+
+    // 3. 使用Object.assign, Object.keys, Object.values 展示它们得用法
+    //     Object.assign  拼接对象，返回一个新对象
+    let obj1 = {
+      a: 1
+    }
+    let obj2 = {
+      b: 2
+    }
+    let obj3 = {
+      c: 3
+    }
+    let box = Object.assign({}, obj1, obj2, obj3)
+    console.log(box) // {a:1,b:2,c:3}
+
+    // Object.keys 用法（获取对象中key值）对象名
+    // let obj = {a:1,b:2,c:3};
+    // console.log(Object.keys(obj)) //["a", "b", "c"]
+    // for(let key of Object.keys(obj)){
+    //    console.log(key);
+    //     //a
+    //     //b
+    //     //c
+    // }
+
+    // Object.values 用法（获取对象中value值）对象值
+
+    // let obj = {a:1,b:2,c:3};
+    // console.log(Object.values(obj)) //[1, 2, 3]
+    // for(let value of Object.values(obj)){
+    //    console.log(value);
+    //     //1
+    //     //2
+    //     //3
+    // }
+
+    // Object.entries 用法（获取对象中每一个键值对，然后转换成数组）
+    // let obj = {a:1,b:2,c:3};
+    // console.log(Object.entries(obj)) //[['a':1], ['b':2],['c':3]]
+    // for(let [key,value] of Object.entries(obj)){
+    //    console.log(key,value);
+    //     //a,1
+    //     //b,2
+    //     //c,3
+    // }
+
+    // 4. 什么是防抖和节流， 并写出一个防抖函数一个节流函数;
+    // 防抖：在触发事件N秒内只执行一件函数，如果在N秒内又触发了事件，则会重新计算函数执行事件；
+    // function box(fn, delay = 500) {
+    //   let time = null;
+    //   return function () {
+    //     if (time) {
+    //       clearTimeout(time);
+    //     }
+
+    //     time = setTimeout(() => {
+    //       fn.apply(this, arguments)
+    //     }, delay)
+    //   }
+    // }
+    // 节流：连续触发事件，但是在N秒内只执行一件函数；节流会限制触发函数执行的频率
+    // function box1(fn, delay = 500) {
+    //   let time = null;
+    //   return function () {
+    //     if (time) {
+    //       return
+    //     }
+    //     time = setTimeout(() => {
+    //       fn.apply(this, arguments)
+    //     }, delay)
+    //   }
+    // }
+    // 5. 如何给1万个button按钮绑定点击事件
+
+    // 6. 点和[]的用法， 有什么区别
+    // 点.用起来方便快捷， 但是后面不能跟数字和 js关键字  ；
+    // [] 容易和数组弄混， 但是功能强， 没有数据限制
+
+    // 7. 使用递归手写一个快速排序
+
+    // function sortarr(arr) {
+    //   // debugger
+    //   //instanceof Array判断 取反的arr是否是数组
+    //   if (!arr instanceof Array) {
+    //     return;
+    //   }
+    //   //判断arr的个数是否小于1
+    //   if (arr <= 1) {
+    //     return arr;
+    //   }
+    //   // 获取中间数的下标
+    //   var num = Math.floor(arr.length / 2);
+    //   // 获取中间值
+    //   var value = arr.splice(num, 1);
+
+    //   // 小于中间数
+    //   var left = [];
+    //   // 大于中间数
+    //   var right = [];
+
+    //   for (var i = 0; i < arr.length; i++) {
+
+    //     if (arr[i] < value) {
+    //       left.push(arr[i]);
+    //     } else {
+    //       right.push(arr[i]);
+    //     }
+    //   }
+
+    //   // 将左右容器递归比较，并连接起来
+    //   return sortarr(left).concat(value, sortarr(right));
+
+
+    // }
+    // console.log(sortarr([20, 40, 21, 44, 21, 50, 12, 6, 8, 10, 80, 33]));
+
+    // 8. new操作符具体干了什么呢 ?
+    // 1. 创建一个空对象
+    // 2. 设置原型链
+    // 3. 绑定this值， 执行函数体
+    // 4. 判断构造函数的返回值，(返回新对象)
+
+    // 9. 说一下什么是原型和原型链
+
+    // 原型链： 当访问实例对象的某个属性时， 会先在这个对象本身的属性上查找， 如果找不到， 则会通过__prtot__属性去原型
+    // 上查找， 如果还找不到， 则会去构造函数的原型的__proto__中查找， 这样一层一层向上查找的机制叫做原型链
+
+    // 10. 继承的几种方式
+    // 原型链继承
+    // 构造继承
+    // 实例继承
+    // 拷贝继承
+    // 组合继承
+    // 寄生混合继承 最好
+
+    // 11.promise是什么，怎么使用？
+
+    // 12.async await 是什么 怎么使用？
+
+    // 13.promise有几个状态？
+  </script>
+</body>
+
+</html>
