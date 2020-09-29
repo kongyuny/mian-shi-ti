@@ -13,25 +13,16 @@
     </div>
     <script>
         // 1,写一个函数可以计算 sum(5,0,-5)输入0；sum(1,2,3,4);输入10；
-        // function sum() {
-        //     var result = 0;
-        //     for (var i = 0; i < arguments.length; i++) {
-        //         var obj = arguments[i];
-        //         result += obj;
-        //     }
-        //     return result;
-        //     }
-        // alert(sum(5,0,-5));
-
-
-        // function sum(){
-        //     var obj =0;
-        //     for (let i = 0; i < arguments.length; i++) {
-        //         obj = (arguments[0]+arguments[1])+arguments[2]+arguments[3];
-        //     }
-        //     return obj;
-        // }
-        // console.log(sum(1,2,3,4))
+        function sum() {
+            var result = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                var obj = arguments[i];
+                result += obj;
+            }
+            return result;
+            }
+            console.log(sum(5,0,-5));
+            console.log(sum(1,2,3,4))
 
         // 2，事件委托是什么，怎么实现
         //利用事件冒泡的原理，让自己所触发的事件，让他的父元素代替执行！
@@ -51,8 +42,8 @@
         // 3，《正则》写出正确的正则表达式匹配固定号，区号3-4位，第一位为0，中横线，7-8位数字，中横线，
         //3-4位分机号格式的固话号
             
-            // var str = "0100-7891432-134"
-            // var reg = /^(0\d{2,3}\-)(\d{7-8}\-)(\d{3-4})$/;
+            // var str = "0100-7891432"
+            // var reg = /^(0\d{2,3}\-)(\d{7-8})$/;
             // var result = reg.test(str);
             // if(result){
             //     alert("正确的电话")
@@ -87,7 +78,7 @@
                 // var result = reg.test(str);
                 // console.log(result)
 
-        // 6，统计1到400亿之间的自然数中含有多少个1？比如1-21中，有1，10，11，12，13，14，15，16，17，18，19，20，21这么多自然数有13个1
+        // 6，统计1到100之间的自然数中含有多少个1？比如1-21中，有1，10，11，12，13，14，15，16，17，18，19，20，21这么多自然数有13个1
 
         // 7，删除与某个字符相邻且相同的字符，比如fdaffdaaklfjklja 字符串处理之后"fdafdaklfjklja"
                 
@@ -108,8 +99,8 @@
                     }
                     return newStr;
                 }
-                var str = 'fdaffdaaklfjklja'; //fdafdaklfjklja
-                console.log(fn (str))
+                //var str = 'fdaffdaaklfjklja'; //fdafdaklfjklja
+                //console.log(fn (str))
 
         // 8,将字符串“<tr><td>{$id}</td><td>{$name}</td></tr>"中的{$id}替换成10，{$name}替换成Tony
         var map={"id":"10","name":"Tony"};
@@ -126,11 +117,20 @@
 
         // 9,给String对象添加一个方法，传入一个string类型的参数，然后将string的每个字符间价格空格返回，例如：addSpace('hello world') //hello  ? world
 
-        // var str="Hello world!";
-        //     function addSpace(str){
-        //             return str.split(" ").join(" ? ");
-        //     }
-        // 　　　　console.log(addSpace("hello world"));
+        let str = 'hello world';
+        function addSpace(str) {
+            console.log(str)
+            str = str.replace(/./g, item => {
+            if(/\s+/g.test(item)) {
+                return '';
+            }
+            return item + ' ';
+            })
+            console.log(str)
+        }
+        String.prototype.addSpace = addSpace;
+
+        str.addSpace(str);
     </script>
 </body>
 </html>

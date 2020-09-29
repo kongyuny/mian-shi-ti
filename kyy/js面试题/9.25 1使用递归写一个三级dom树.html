@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .p2{padding-left: 30px;}
+    .p3{padding-left: 60px;}
+</style>
+<body>
+    <div class="box"></div>
+    <script>
+         const treeArr = [{
+           name:'1111',
+           level:1,
+           childrens:[{
+              name:'222',
+              level:2,
+             childrens:[{
+               name:'3333',
+               level:3,
+             }]
+           }]
+         },{
+           name:'1111',
+           level:1,
+           childrens:[{
+              name:'222',
+              level:2,
+             childrens:[{
+               name:'3333',
+               level:3,
+             }]
+           }]
+         }]
+
+        var box = document.querySelector('.box');
+        function treefn(treeArr){
+            var html = '';
+            html +="<ul>"
+            treeArr.forEach(item => {
+                html+='<li class=p'+item.level+'>'+item.name
+                    // item.childrens.forEach(items=>{
+                    //     html+='<li>'+items.name+'</li>'
+                    // })
+                if(item.childrens &&item.childrens.length>0){
+                     html+=treefn(item.childrens);
+                }
+
+                html+='</li>'
+            });
+            html+="</ul>"
+            return html;
+        }
+    
+        box.innerHTML =treefn(treeArr);
+    </script>
+</body>
+</html>

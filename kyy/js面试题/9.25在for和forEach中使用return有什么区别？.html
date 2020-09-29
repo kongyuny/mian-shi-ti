@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let arr = [0,1,2,3,4,5,6]
+   function aa(arr) {
+        for(var i = 0; i < arr.length; i++) {
+            // console.log(i)
+            if (i == 3) {
+                return
+                //break // 跳出整个循环
+                //continue // 跳出当前循环
+            }
+        }
+    }
+    aa(arr) // 0 1 2 3
+
+    // let bb = function () {
+    //     let arr = [1, 2, 3, 4, 5]
+    //     arr.forEach(item => {
+    //         console.log(item)
+    //         if (item == 3) {
+    //             console.log("item")
+    //             return
+    //             // break // 语法报错
+    //             console.log('return')
+    //         }
+    //     })
+    // }
+    // bb() // 1 2 3 item 4 5
+
+
+    let bb = function () {
+        let arr = [1, 2, 3, 4, 5]
+        try{
+            arr.forEach(item => {
+                console.log(item)
+                if (item == 3) {
+                    console.log("item")
+                    //return
+                    // break // 语法报错
+                    throw new error // 主动去抛出一个错误
+                    console.log('return')
+                }
+            })
+        }catch{
+            console.log('跳出来了')
+       }
+    }
+    bb() // 1 2 3 item 跳出来了
+    </script>
+</body>
+</html>

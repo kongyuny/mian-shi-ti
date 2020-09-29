@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="btns" style="width:1000px;margin:20px"></div>
+    <style>
+        button{display: inline;}
+    </style>
+    <script>
+        function bindEvent() {
+            var btns = document.getElementById('btns');
+            for (var i = 0; i < 10000; i++) {
+                var btn = document.createElement('button');
+                btn.innerHTML = "按钮" + i;
+                btns.appendChild(btn);
+            }
+            btns.addEventListener('click', function (e) {
+                var e = e || window.event;
+                var target = e.target || e.srcElement;
+                if (target.tagName == 'BUTTON') {
+                    alert(target.innerHTML);
+                }
+            }, false)
+        }
+        bindEvent()
+    </script>
+     
+</body>
+</html>

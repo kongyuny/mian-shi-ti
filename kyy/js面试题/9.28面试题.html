@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1,promise是什么，怎么使用
+    //     promise是异步编程的一种解决方案，比传统的方案（回掉函数和事件）更加的合理和强大
+    // 当参数a大于10且参数fn2是一个方法时 执行fn2
+    // var a = function() {
+    //     console.log('a');
+    // };
+
+    // var b = function() {
+    //     console.log('b');
+    // };
+
+    // var c = function() {
+    //     for(var i=0;i<100;i++){
+    //         console.log('c')
+    //     }  
+    // };
+
+    // a(b(c())); // 100个c -> b -> a
+    
+
+    let p = new Promise((resolve, reject) => {
+        //做一些异步操作
+        setTimeout(() => {
+            console.log('执行完成');
+            resolve('我是成功！！');
+        }, 2000);
+    }).then((res)=>{
+        console.log(res)
+    });
+
+    function promise(url) {
+         return new Promise((resolve,reject)=>{
+           ajax(url,(res)=>{
+             resolve(res);
+           })
+         })
+       }
+
+
+    // 2，async/await是什么，怎么使用
+        是写异步代码的新写法，
+
+
+    // 3，promise有几种动态
+    //     有三种状态：pending (等待状态)   初始状态，既不是成功，也不是失败。
+                    // fulfiled(成功状态)， 意味着操作成功完成。
+                    // rejected(失败状态)  意味着操作失败。
+                    // 状态一旦改变，就不会再变。
+    </script> 
+     
+</body>
+</html>

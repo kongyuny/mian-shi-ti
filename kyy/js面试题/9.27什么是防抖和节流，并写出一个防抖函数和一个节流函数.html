@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="box">点击</div>
+<body>
+  <script>
+    // 函数节流是：在固定的时间内触发事件，每隔n秒触发一次
+    // 函数防抖是：当你频繁触发后，n秒内只执行一次
+    //防抖
+    // function debounce(fn) {
+    //     console.log(fn)
+    //     let timeout = null; // 创建一个标记用来存放定时器的返回值
+    //     return function () {
+    //         clearTimeout(timeout); // 每当用户输入的时候把前一个 setTimeout clear 掉
+    //         timeout = setTimeout(() => { // 然后又创建一个新的 setTimeout, 这样就能保证输入字符后的 
+    //                                     //interval 间隔内如果还有字符输入的话，就不会执行 fn 函数
+    //             console.log(this,arguments)
+    //             fn.apply(this, arguments);  //这步有点没有懂
+                
+    //         }, 500);
+    //     };
+    // }
+    // function sayHi() {
+    //     console.log('防抖成功');
+    // }
+    // let box = document.getElementById('box')
+    // box.addEventListener('click', debounce(sayHi))
+
+
+//节流
+    function throttle(fn) {
+    let canRun = true; // 通过闭包保存一个标记
+    return function () {
+        if (!canRun) return; // 在函数开头判断标记是否为true，不为true则return
+        canRun = false; // 立即设置为false
+        setTimeout(() => { // 将外部传入的函数的执行放在setTimeout中
+            fn.apply(this, arguments);
+            // 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。当定时器没有执行的时候标记永远是false，在开头被return掉
+            canRun = true;
+        }, 500);
+    };
+}
+function sayHi(e) {
+    console.log('节流');
+}
+window.addEventListener('resize', throttle(sayHi));
+
+/*应用场景：
+debounce
+    search搜索联想，用户在不断输入值时，用防抖来节约请求资源。
+    频繁操作点赞和取消点赞，因此需要获取最后一次操作结果并发送给服务器
+throttle
+    鼠标不断点击触发，mousedown(单位时间内只触发一次)
+    window触发resize的时候，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次*/
+  </script>  
+</body>
+</html>
