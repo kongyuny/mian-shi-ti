@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.localStorage，sessionStorage， cookie的区别
+    // cookie: 存储量 4 kb， 随浏览器， 页面关闭清除， 访问服务器的时候会携带上cookie值；
+    // localStorage： 存储量 4.98 Mb， 理论上永久保存， 除非手动清除； 不会与服务器交互
+    // sessionStorage: 存储量 4.98 Mb， 随浏览器， 页面关闭清除， 不会与服务器交互
+
+    // 2.使用before/after写两个伪元素，并说出有什么区别
+
+    // 3.同步和异步的区别
+    // 同步； 代码从上到下按顺序执行， 遇到需要加载慢的代码， 或等待加载的代码， 会等待加载， 这样会造成页面卡顿；
+    // 异步： 代码从上到下执行， 遇到加载慢， 或等待加载的代码； 会先跳过， 这样不会造成线程堵塞；
+
+    // 4.如何解决跨域，有几种方法
+    // jsonp： 首先jsonp不是通过ajax请求获取数据； 是利用script标签没有跨域限制， script的地址是后端的一个接口地址；
+    // 这个请求返回一个函数调用， 函数的参数就是我们要的数据； 我们只需要写一个函数去接收这个参数就可以了， 最重要的
+    // 是我们和后端协商好函数名， 必须一致
+    // Proxy
+
+    // 5.简述ajax的过程
+    // 1. 创建一个异步请求
+    // 2. 设置请求的方式和地址
+    // 3. send发送请求
+    // 4. 监听状态变化
+    // 5. 接收返回的数据
+
+    // 6.一个页面从输入URL到页面加载显示完成，这个过程中都发生了什么?
+    // 1. 查看是否有缓存， 然后域名解析
+    // 2. 发起tcp的三次握手
+    // 3. 建立tcp连接后发起http请求
+    // 4. 服务器端响应http请求， 浏览器得到html代码
+    // 5. 浏览器解析html代码， 请求html代码中资源
+    // 6. 浏览器对页面进行渲染呈现给用户
+
+
+    // 7.使用递归写-个三级dom树;
+
+    // 8.请用正则表达式写一个简单 的邮箱验证。
+    // let box = /\w+@\w+((\.|-)\w+)+/
+    // console.log(box.test('79969@qq.com'))
+    // console.log(box.test('79969@qq233.com'))
+    // console.log(box.test('79969@qq233.vip.com'))
+
+    // 9.在for和forEach中使用return有什么区别;
+    // for; return 直接中止循环
+    // forEach;   中断本次循环，进入下次循环
+  </script>
+</body>
+
+</html>

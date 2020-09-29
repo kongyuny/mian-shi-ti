@@ -8,7 +8,13 @@
 </head>
 
 <body>
+<<<<<<< HEAD
   <!-- <div id="show"></div> -->
+=======
+  <div id="show">
+
+  </div>
+>>>>>>> fa4fe1611894974d598f236fd4f575b0615334c3
   <script>
     // let show = document.getElementById('show');
     // 1.有这样一个URL: http://item. taobao .com/item.htm?a=1&b=2&c=&d=xxx&e,请写一个fn函数， 参数是url,
@@ -90,8 +96,11 @@
     // 4.写出今天的时间，格式为2020-9-18 13:30:05,封装成-个fn函数，函数最后将值打印到页面上
     function fn() {
       var myDate = new Date(); // 先new 一个Date时间
+<<<<<<< HEAD
       //let ary = myDate.toLocaleDateString(); //获取当前日期， 不兼容
 
+=======
+>>>>>>> fa4fe1611894974d598f236fd4f575b0615334c3
       let fullyear = myDate.getFullYear(); // 年
       let month = myDate.getMonth() + 1; // 月   因为从0开始，所以要+1
       let date = myDate.getDate(); // 日
@@ -110,7 +119,11 @@
       show.innerHTML = add;
     }
     fn()
+<<<<<<< HEAD
     setInterval(fn, 1000) // 每秒执行一次
+=======
+    // setInterval(fn, 1000) // 每秒执行一次
+>>>>>>> fa4fe1611894974d598f236fd4f575b0615334c3
 
     // ===========================================================================================================
     // 5.截取字符串abcdefg的efg

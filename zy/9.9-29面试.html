@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 1.如下图所示的运算程序中，若开始输入的x值为48，则第1次榆出的结果为24.第2次输出的结果为12；第2019次输出的结果为:
+    //   奇数 x+3     偶数  2/1 x   
+    // function fn(box) {
+    //   let arr = box
+    //   for (var i = 0; i < 2019; i++) {
+    //     if (arr % 2 === 0) {
+    //       arr = arr / 2
+    //     } else {
+    //       arr += 3
+    //     }
+    //   }
+    //   console.log(arr)
+    // }
+    // fn(48)
+    // 2.将100围棋子分成了三堆，第一堆比第 二堆的2倍还要多，第二堆比第三堆的3倍还要多，那么第三堆最多有多少颗棋子?
+
+    // function fn() {
+    //   let box1 = 0;
+    //   let box2 = 0;
+    //   let box3 = 0;
+    //   // debugger
+    //   for (var i = 0; i < 100; i) {
+    //     if (i < 100) {
+    //       box3 += 1;
+    //       box2 = box3 * 3 + 1;
+    //       box1 = box2 * 2 + 1
+    //       i = box1 + box2 + box3
+    //     } else {
+    //       return
+    //     }
+
+    //   }
+    //   console.log(box1)
+    //   console.log(box2)
+    //   console.log(box3)
+    //   return box3
+    // }
+    // console.log(fn())
+
+    // 3. 1到1000这1000 个自然数中,完全不含有1的数有多少个?
+    // function fn() {
+    //   let box = [];
+    //   for (var i = 0; i < 1000; i++) {
+    //     if ((i).toString().indexOf(1) === -1) {
+    //       box.push(i)
+    //     }
+    //   }
+    //   console.log(box)
+    //   console.log(box.length)
+    //   return box.length
+    // }
+    // console.log(fn())
+
+    // 4、在1-2004 的所有自然数中，既不是2的倍数，也不是3和5的倍数的数有多少个?
+    // function fn() {
+    //   let box = [];
+    //   for (var i = 0; i < 2004; i++) {
+    //     if (i % 2 && i % 3 && i % 5 === 0) {
+    //       box.push(i)
+    //     }
+    //   }
+    //   console.log(box)
+    //   console.log(box.length)
+    //   return box.length
+    // }
+    // console.log(fn())
+
+    // 5. 巴里听收音机听了3小时36分钟。四舍五入到最近的10分钟，巴里听了多少分钟?
+    // 3小时40放分钟
+
+    // 6. 张老师的年龄是小红的2倍4岁，今年40岁了。小红现在多大了?
+    // (40 - 4) / 2 = 18
+
+    // 7. 一天下午，一个男孩和妹妹在街上散步，这时他们遇到了一位善良的老人。当老人问他们家有多少人时，男孩很快回答了。
+    // “我的兄弟和姐妹一样多，”他自豪地说。为了不被遗漏，女孩补充说:“我的兄弟是姐妹的三倍。”你能说出他们家总共有几个男孩和女孩吗?
+    // x===兄弟    y===姐妹
+    // x-1===y
+    // x===3*(y-1)
+
+    // x=== y+1
+    // x=== 3y-3
+    // y+1 === 3y-3
+    // 3+1 ===3y-y
+    // 4===2y
+
+    // 2===y   姐妹
+    // 2+1===x 兄弟
+
+
+    // 8.学生每天需要交学费，第一一天交1分钱， 第二天交2分钱，第3天交4分钱，学费每天增加倍. 
+    // 请写段javaScript程序，输出学生每天学费金额与30天的总学费。
+    // function fn() {
+    //   let box = 0;
+    //   let obj = [];
+    //   for (var i = 0; i < 30; i++) {
+    //     if (box === 0 | box === 1) {
+    //       box += 1
+    //       obj.push(box)
+    //     } else {
+    //       box = box * 2
+    //       obj.push(box)
+    //     }
+    //   }
+    //   console.log(box)
+    //   console.log(obj)
+    // }
+    // fn()
+
+    // 9.写一个JavaSeript函数，输人3个正整数，判断能否构成个三角形.
+
+    // 10.有一个用户登录的表单，输入用户名与密码，点击登录或取消，当点击[登录]按钮的时候，需要验证一下用户 
+    // 名和密码是否为空，为空则给出相应提示:“用户名不能为空":密码不能为空!".当点击[取消]按钮的时候，
+    // 清空所壤的内容。请用代码实现本功施.
+
+    // 11.以下程序运行的输出结果分别是什么?
+
+    // function test(x, y, z) {
+
+    //   alert(test.length); //3
+    //   alert(arguments.length); //2
+    //   alert(arguments.callee === test); // true
+    //   alert(arguments[2]); //undefined
+    // }
+    // test(5, 6);
+
+
+
+    // 二、VUE + Element UI
+
+    // 1. vue如何实现按需加载配合webpack设置?
+
+    // 2、mvvm和mve区别?它和其它框架(iquery) 的区别是?
+
+    // 3. Vue的双向数据绑定原理是什么?
+
+    // 4.写出v-show和v-if指令的共同点和不同点。
+
+    // 5、v-model 是什么?怎么使用? vue 中标签怎么绑定事件
+
+    // 6、vuex 是什么? vuex 有哪几种属性?怎么使用?哪种功自7、vu-router 有哪几种导航钩子?
+
+    // 8. ElementUI 的表单组件怎么使用?它有哪些属性? Elem9、mint-i 是什么?怎么使用?说出至少三个组件使用方法
+
+    // 10、 什么是RESTul API?怎么使用?
+  </script>
+</body>
+
+</html>

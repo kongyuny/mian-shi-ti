@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<ul id="ul1">
+  <li>111</li>
+  <li>222</li>
+  <li>333</li>
+  <li>444</li>
+</ul>
+
+<body>
+  <script>
+    // 1.写一个函数可以计算sum(5,0,-5);输出0; sum(1,2,3.4);输出10;
+    // function sum() {
+    //   console.log(arguments)
+    //   let obj = 0;
+    //   for (var i = 0; i < arguments.length; i++) {
+    //     obj += arguments[i]
+    //   }
+    //   return obj
+    // }
+    // console.log(sum(1, 2, 3))
+    // console.log(sum(5, 0, -5))
+
+    // 2.事件委托是什么，怎么实现
+
+    window.onload = function () {
+      var oUl = document.getElementById("ul1");
+      oUl.onclick = function (ev) {
+        var ev = ev || window.event;
+        var target = ev.target || ev.srcElement;
+        if (target.nodeName.toLowerCase() == 'li') {
+          alert(123);
+          alert(target.innerHTML);
+        }
+      }
+    }
+
+    // 3.《正则》写出正确的正则表达式匹配固话号，区号3-4位,第一位为0，中横线, 7-8 位数字,中横线，3-4 位分机号格式的固话号
+
+    // let box = /^0\d{3}\-\d{7,8}$/;
+    // console.log(box.test('0235-88985543'))
+    // console.log(box.test('1035-88985543'))
+
+    // 4.写出代码对下列数组去重并从大到小排列{5,2,3.6,8,6,5,4,7,1,9} 
+    // let arr = [5, 2, 3, 6, 8, 6, 5, 4, 7, 1, 9];
+
+    // function fn(src) {
+    //   let obj = [];
+    //   src.forEach((item, index) => {
+    //     if (obj.indexOf(item) === -1) {
+    //       obj.push(item)
+    //     }
+    //   })
+    //   obj.sort(function (a, b) {
+    //     return b - a
+    //   })
+    //   return obj
+    // }
+    // console.log(fn(arr))
+    // 5.请写一个正则表达式:要求最短6位数，最长20位,阿拉伯数和英文字母(不区分大小写)组成
+    // let box = /^[0-9a-zA-Z]{6,20}$/;
+    // console.log(box.test('RFS85543'))
+
+    // 6.统计1到400亿之间的自然数中含有多少个1?比如1-21中,有1、10、 11、 12、13、 14、 15、16、 17、 18、19、 20、21这么多自然数有13个1
+
+    // 7.删除与某个字符相邻且相同的字符，比如fdaffdaaklfjkja字符串处理之后成为"fdafdakijkja"
+    // let arr = 'fdaffdaaklfjkja';
+    // let arr1 = '112132233432445566';
+
+    // function fn(src) {
+    //   let obj = src.split('')
+    //   let box = []
+    //   for (var i = 0; i < obj.length; i++) {
+    //     let add = box.slice(box.length - 1)
+    //     if (!(obj[i] == add)) {
+    //       box.push(obj[i])
+    //     }
+    //   }
+    //   return box.join('')
+    // }
+    // console.log(fn(arr))
+    // console.log(fn(arr1))
+
+    // 8.将字符串"<tr><td>{$id}</td><td>{$name}</td></tr>”中的{$id}替换成10, {$name}替换成Tony
+    // let arr = "<tr><td>{$id}</td><td>{$name}</td></tr>";
+
+    // console.log(arr.replace(/\$\w{2}/, '$10').replace(/\$\w{4}/, '#Tony'))
+
+    // 9.给String对象添加一个方法，传入一个string类型的参数，然后将string的每个字符间价格空格返回，
+    // 例如: addSpace("hello worl')//-> "hello ?world'
+    // function addSpace(src) {
+    //   let obj = src.replace(/\s/g, '?').split('')
+    //   let box = [];
+    //   obj.forEach((item, index) => {
+    //     box.push(item)
+    //     box.push('')
+    //   })
+    //   return box.join(' ')
+    // }
+    // console.log(addSpace("hello worl"))
+    // console.log(addSpace("hello worl weqeq"))
+    // console.log(addSpace("hello worl 32 ew ewr"))
+  </script>
+</body>
+
+</html>
