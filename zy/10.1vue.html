@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // vue.js 核心知识点高频试题一
+
+    // 4.1对于Vue是一套渐进式框架的理解
+    // mvvm 数据驱动， 双向数据绑定；
+
+    // 4.2请说出vue几种常用的指令
+    // v-if
+    // v-else
+    // v-model
+    // v-show
+    // v-on
+    // v-bind
+    // v-for
+    // v-html
+    // v-Text
+    // 4.3请问v-if和v-show有什么区别?
+    // v-if: 删除，添加元素
+    // v-show：隐藏，显示元素
+
+    // 4.4 vue常用的修饰符
+    // .stop 阻止单击事件继续传播
+    // .prevent 提交事件不再重载页面
+
+    // .lazy 取代input 监听change  事件失去焦点
+    // .number 输入字符串转为有效数字
+    // .trim 输入首尾空格过滤
+
+    // 4.5 v-on可以监听多个方法吗?
+    // 可以；
+
+    // 4.6 vue中key值的作用
+    // 设置key值，增加唯一性，不会被浏览器缓存
+
+    // 4.7 vue-cli工程升级vue版本
+    // 1.删除原版vue-cli；安装新版vue-cli
+    // 2.删除新项目src下的内容，把原项目scr覆盖过来
+    // 3.修改paclage.json文件
+
+    // 4.8 vue事件中如何使用event对象?
+
+    // 4.9 $nextTick的使用
+
+    // 4.10 Vue组件中data为什么必须是函数
+    // data是一个函数的话，这样每复用一次组件，就会返回一份新的data，类似于每个组件实例创建一个私有的数据
+    // 空间，让各个组件里的数据不相互影响；
+    // 如果data单纯的写成对象形式，就使得所有组件实例共用一份data,就会造成一个数据变了，其他也全变了；
+
+    // 4.11 v-for与v-if的优先级
+    //  v-for 优先级高；
+    //  不能把v-for和v-if同时放到一个元素上
+  </script>
+</body>
+
+</html>
